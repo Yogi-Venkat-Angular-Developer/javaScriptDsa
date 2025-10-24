@@ -4,14 +4,14 @@
 // then remove from the copy 
 
 function palindrome(x){
-  x = Math.abs(x);
-  let copyX = x;
-  let reverseX = 0;
-  for(let i = 0 ; i <= copyX ; i++){
-    reverseX += copyX % 10;
-    copyX = copyX /10
+  let copyNum = x , reverseNum = 0;
+  while(copyNum > 0){
+    const lastDigit = copyNum % 10;
+    reverseNum = reverseNum * 10 + lastDigit;
+    copyNum = Math.floor(copyNum /10)
   }
-  return x === reverseX
+  return x == reverseNum
 };
 
 console.log(palindrome(121));
+console.log(palindrome(234));
